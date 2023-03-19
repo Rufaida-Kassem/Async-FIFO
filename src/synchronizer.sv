@@ -20,9 +20,9 @@ module synchronizer
   logic [N_BITS:0] q1;
 
   // always block
-  always_ff @(posedge clk or posedge rst)
+  always_ff @(posedge clk or negedge rst)
   begin
-    if (rst)
+    if (!rst)
     begin
       q1 <= 'b0;
       q <= 'b0;
